@@ -1,0 +1,43 @@
+---
+---
+
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.3.1/model-viewer.min.js"></script>
+    <div class=" container vh-100 ">
+    <div class="row h-100 align-items-center">
+        <div class="col-lg-6">
+            <h1 id="title-left">IMPORTAMOS TU SUEÑO</h1>
+            <p id="description">Rompemos las barreras de la importación automotriz. Somos tu aliado estratégico para la adquisición y legalización de vehículos exclusivos. Transparencia total, trámites ágiles y tu máquina soñada lista para rodar.</p>
+            <btn class="btn btn-outline-warning" id="btn-more">Conoce Nuestro Motor</btn>
+        </div>
+        <div class="col-lg-6">
+            <model-viewer src="./public/toyota_tacoma_trd.glb" shadow-intensity="1" camera-controls touch-action="pan-y"> </model-viewer>
+        </div>
+    </div>
+</div>
+
+
+<style>
+    #title-left{
+        font-size: 85px;
+        font-family: "Bebas Neue", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        color: goldenrod;
+    }
+    #btn-more{
+        font-family: "Montserrat", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 600;
+        font-style: normal;
+    }
+    #description{
+        font-family: "Montserrat", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 600;
+        font-style: normal;
+    }
+    model-viewer{
+        width: 800px;
+        height: 800px;
+    }
+</style>

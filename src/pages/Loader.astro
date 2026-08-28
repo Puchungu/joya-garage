@@ -1,0 +1,79 @@
+---
+
+---
+
+<div id="main">
+    <h2 id="title">JOYA <span id="garage">GARAGE</span></h2>
+    <div id="container">
+        <div id="loading">   
+
+        </div>
+    </div>
+    <span id="percentage">0%</span>
+</div>
+
+<style>
+    #main {
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        z-index: 10;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: black;
+        color: white;
+        top: 0;
+        left: 0;
+        transition: transform 1.3s ease-in-out;
+    }
+    #container {
+        width: 100px;
+        height: 20px;
+        background-color: #222;
+    }
+    #loading{
+        height: 100%;
+        width: 0%;
+        background-color: goldenrod;
+    }
+    #garage{
+        color: goldenrod;
+    }
+    .abrir{
+        transform: rotate(15deg) translateY(-150vh);
+    }
+    #percentage{
+        font-size: 85px;
+        font-family: "Bebas Neue", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+    }
+    #title{
+        font-size: 85px;
+        font-family: "Bebas Neue", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+    }
+</style>
+
+<script>
+    let number = 0;
+    const percentage = document.getElementById("percentage");
+    const loading = document.getElementById("loading");
+    const main = document.getElementById("main");
+    const timer = setInterval(()=> {
+        number += 10;
+        if (percentage && loading){
+            percentage.textContent = number + "%";
+            loading.style.width = number + "%";
+        }
+        if (number === 100) {
+            clearInterval(timer);
+            if (main){
+                main.classList.add("abrir")
+            }
+        };
+    }, 100);
+</script>
