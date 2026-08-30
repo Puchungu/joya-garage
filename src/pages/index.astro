@@ -2,6 +2,7 @@
 import Loader from "../pages/Loader.astro"
 import Navbar  from "./Navbar.astro";
 import Hero from "./Hero.astro"
+import Services from "./Services.astro"
 ---
 
 <!DOCTYPE html>
@@ -13,11 +14,39 @@ import Hero from "./Hero.astro"
 	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
-<body class="bg-dark text-white">
+<body class="bg-dark text-white scroll-snap-body">
 	<Loader/>
 	<Navbar/>
-	<Hero/>
+	<div class="scroll-snap-container">
+		<Hero/>
+		<Services/>
+	</div>
 
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
+
+<style>
+	:global(html) {
+		scroll-behavior: auto;
+	}
+
+	.scroll-snap-body {
+		margin: 0;
+		padding: 0;
+		overflow: hidden;
+	}
+
+	.scroll-snap-container {
+		scroll-snap-type: y mandatory;
+		height: 100vh;
+		overflow-y: scroll;
+		overflow-x: hidden;
+	}
+
+	/* Ensure each direct child snaps to the top of the viewport */
+	.scroll-snap-container > :global(*) {
+		scroll-snap-align: start;
+		scroll-snap-stop: always;
+	}
+</style>
 </html>

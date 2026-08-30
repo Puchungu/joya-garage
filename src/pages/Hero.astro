@@ -2,59 +2,70 @@
 ---
 
 <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.3.1/model-viewer.min.js"></script>
-<div class=" container vh-100">
-    <div class="row h-100 align-items-center">
-        <div class="col-lg-6" id="hero">
-            <h1 id="title-left">IMPORTAMOS TU SUEÑO</h1>
-            <p id="description">Rompemos las barreras de la importación automotriz. Somos tu aliado estratégico para la adquisición y legalización de vehículos exclusivos. Transparencia total, trámites ágiles y tu máquina soñada lista para rodar.</p>
-            <button  type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#button-modal" id="btn-more">Conoce Nuestro Motor</button>
-        </div>
-        <div class="col-lg-6" id="hero">
-            <model-viewer src="./toyota_tacoma_trd.glb" shadow-intensity="1" camera-controls touch-action="pan-y"> </model-viewer>
+<section class="hero-section">
+    <div class="container-fluid h-100">
+        <div class="row h-100 align-items-center">
+            <div class="col-lg-6" id="hero">
+                <h1 id="title-left">IMPORTAMOS TU SUEÑO</h1>
+                <p id="description">Rompemos las barreras de la importación automotriz. Somos tu aliado estratégico para la adquisición y legalización de vehículos exclusivos. Transparencia total, trámites ágiles y tu máquina soñada lista para rodar.</p>
+                <button  type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#button-modal" id="btn-more">Conoce Nuestro Motor</button>
+            </div>
+            <div class="col-lg-6" id="hero">
+                <model-viewer src="./toyota_tacoma_trd.glb" shadow-intensity="1" camera-controls touch-action="pan-y"> </model-viewer>
+            </div>
         </div>
     </div>
-</div>
 
 
-<!-- Modal -->
-<div class="modal fade" id="button-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content bg-dark text-white border border-warning">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Perfil Técnico - Joya Garage, S.A.S.</h1>
-        <p></p>
-      </div>
-      <div class="modal-body bg-dark text-white">
-        <div class="mb-4">
-            <h5 class="text-warning">Nuestra Filosofía Legal</h5>
-            <p>Operamos bajo la figura de Sociedad por Acciones Simplificada (S.A.S) para garantizar agilidad de inversión y protección del patrimonio.</p>
+    <!-- Modal -->
+    <div class="modal fade" id="button-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content bg-dark text-white border border-warning">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Perfil Técnico - Joya Garage, S.A.S.</h1>
+            <p></p>
+          </div>
+          <div class="modal-body bg-dark text-white">
+            <div class="mb-4">
+                <h5 class="text-warning">Nuestra Filosofía Legal</h5>
+                <p>Operamos bajo la figura de Sociedad por Acciones Simplificada (S.A.S) para garantizar agilidad de inversión y protección del patrimonio.</p>
+            </div>
+            <div class="mb-4">
+                <h5 class="text-warning">Objeto Social</h5>
+                <p>Nos dedicamos a la importación, comercialización y prestación de servicios de trámites de Sertracen.</p>
+            </div>     
+            <div class="mb-4">
+                <h5 class="text-warning">El Modelo "Llave en Mano" (Viabilidad Comercial)</h5>
+                <p>No solo vendemos autos, resolvemos la carga burocrática del cliente (aduanas y tránsito) ahorrándoles tiempo y generando una ventaja competitiva.</p>
+            </div> 
+            <div class="mb-4">
+                <h5 class="text-warning">Motor Financiero (Viabilidad Financiera)</h5>
+                <p>Trabajamos con una política estricta de ventas al contado (sin créditos) para asegurar liquidez inmediata, flujo de caja positivo y rápida reinversión.</p>
+            </div> 
+            <div class="mb-4">
+                <h5 class="text-warning">Infraestructura</h5>
+                <p>Operaciones centralizadas en San Carlos, Morazán, respaldadas por un capital inicial de $10,000 USD</p>
+            </div>   
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-warning" data-bs-dismiss="modal">Close</button>
+          </div>
         </div>
-        <div class="mb-4">
-            <h5 class="text-warning">Objeto Social</h5>
-            <p>Nos dedicamos a la importación, comercialización y prestación de servicios de trámites de Sertracen.</p>
-        </div>     
-        <div class="mb-4">
-            <h5 class="text-warning">El Modelo "Llave en Mano" (Viabilidad Comercial)</h5>
-            <p>No solo vendemos autos, resolvemos la carga burocrática del cliente (aduanas y tránsito) ahorrándoles tiempo y generando una ventaja competitiva.</p>
-        </div> 
-        <div class="mb-4">
-            <h5 class="text-warning">Motor Financiero (Viabilidad Financiera)</h5>
-            <p>Trabajamos con una política estricta de ventas al contado (sin créditos) para asegurar liquidez inmediata, flujo de caja positivo y rápida reinversión.</p>
-        </div> 
-        <div class="mb-4">
-            <h5 class="text-warning">Infraestructura</h5>
-            <p>Operaciones centralizadas en San Carlos, Morazán, respaldadas por un capital inicial de $10,000 USD</p>
-        </div>   
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-outline-warning" data-bs-dismiss="modal">Close</button>
       </div>
     </div>
-  </div>
-</div>
+</section>
 
 
 <style>
+    .hero-section {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+    }
+
     #title-left{
         font-size: 45px;
         font-family: "Bebas Neue", sans-serif;

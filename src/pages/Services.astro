@@ -1,0 +1,85 @@
+---
+---
+
+<section class="services-section">
+    <div class="container h-100">
+        <div class="row h-100 align-items-center">
+            <div class="col-12">
+                <h2 id="services-title">Nuestros Servicios</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <h3>Importación de Vehículos</h3>
+                        <p>Importamos vehículos de calidad desde los mejores mercados internacionales con transparencia total.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Legalización</h3>
+                        <p>Tramitamos la legalización y documentación de tus vehículos importados de manera rápida y eficiente.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Asesoría Técnica</h3>
+                        <p>Te brindamos asesoría experta en la selección y adquisición de vehículos importados.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Financiamiento</h3>
+                        <p>Ofrecemos soluciones de pago flexible para facilitar tu adquisición de vehículos.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .services-section {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    }
+
+    #services-title {
+        font-size: 56px;
+        font-family: "Bebas Neue", sans-serif;
+        font-weight: 400;
+        color: goldenrod;
+        margin-bottom: 60px;
+        text-align: center;
+    }
+
+    .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+    }
+
+    .service-card {
+        background: rgba(218, 165, 32, 0.1);
+        border: 2px solid goldenrod;
+        padding: 30px;
+        border-radius: 10px;
+        transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+
+    .service-card:hover {
+        transform: translateY(-10px);
+        background: rgba(218, 165, 32, 0.2);
+    }
+
+    .service-card h3 {
+        color: goldenrod;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 700;
+        margin-bottom: 15px;
+        font-size: 20px;
+    }
+
+    .service-card p {
+        color: #ccc;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 400;
+        line-height: 1.6;
+    }
+</style>
