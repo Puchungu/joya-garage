@@ -13,12 +13,57 @@ import Team from "./Team.astro"
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+	<style is:global>
+		.snap-container{
+			height: 100vh;
+			overflow-y: scroll;
+			scroll-snap-type: y mandatory;
+			scroll-behavior: smooth;
+		}
+		.oculto {
+		opacity: 0;
+		filter: blur(15px); /* Inicia borroso */
+		transform: translateY(50px); /* Inicia un poco más abajo */
+		transition: all 1s ease-in-out; /* La duración de la magia */
+		}
+		.revelado {
+			opacity: 1;
+			filter: blur(0);
+			transform: translateY(0);
+		}
+	</style>
 </head>
 <body class="bg-dark text-white">
-	<Loader/>
-	<Navbar/>
-	<Hero/>
-	<Team/>
+	<main class="snap-container">
+		<Loader/>
+		<Navbar/>
+		<Hero/>
+		<Team/>
+	</main>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+	<script>
+    // Configuramos la sensibilidad del vigilante
+    const opciones = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.2 // Significa: "Actívate solo cuando veas el 20% del elemento"
+    };
+
+    const observador = new IntersectionObserver((entradas) => {
+        entradas.forEach((entrada) => {
+            if (entrada.isIntersecting) {
+                // Cuando entra el 20% en la pantalla, revelamos
+                entrada.target.classList.add('revelado');
+            } else {
+                // En cuanto queda menos del 20%, lo ocultamos para que se recargue
+                entrada.target.classList.remove('revelado');
+            }
+        });
+    }, opciones); // <-- Le pasamos nuestras opciones aquí al final
+
+    // Le decimos que vigile a nuestro contenedor oculto
+    const elementosOcultos = document.querySelectorAll('.oculto');
+    elementosOcultos.forEach((el) => observador.observe(el));
+</script>
 </body>
 </html>

@@ -1,8 +1,8 @@
 ---
 ---
-<section class="team-section">
+<section class=" vh-100 d-flex flex-column justify-content-center align-items-center team-section bg-dark position-relative">
     <h1 id="nuestro-equipo" class="text-center mb-5">NUESTRO EQUIPO</h1>
-    <div class="container">
+    <div class="container oculto">
         <div class="row row-cols-1 row-cols-md-3 row-cols-xl-5 g-4">
             <div class="col">
                 <div class="card h-100">
@@ -67,5 +67,10 @@
         font-style: normal;
         color: goldenrod;
         margin-top: 50px;
+    }
+    .team-section{
+        height: 100vh;
+        scroll-snap-align: start;
+        z-index: 10;
     }
 </style>

@@ -2,7 +2,7 @@
 ---
 
 <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.3.1/model-viewer.min.js"></script>
-<div class=" container">
+<div class="oculto container">
     <div class="row h-100 align-items-center">
         <div class="col-lg-6" id="hero">
             <h1 id="title-left">IMPORTAMOS TU SUEÑO</h1>
@@ -81,5 +81,12 @@
     }
     #hero{
         margin-top: 150px;
+    }
+
+    .container { 
+        height: 100vh; 
+        scroll-snap-align: start;
+        position: relative;
+        z-index: 1;
     }
 </style>
