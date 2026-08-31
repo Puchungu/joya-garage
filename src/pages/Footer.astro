@@ -1,0 +1,55 @@
+---
+---
+
+<footer id="footer" class="oculto vh-100 d-flex flex-column justify-content-center align-items-center bg-dark position-relative text-light">
+    <div class="container text-center">
+        <!-- El row con align-items-center centra verticalmente el contenido de las 3 columnas -->
+        <div class="row align-items-center">
+            
+            <!-- Columna 1: Mapa Responsivo -->
+            <div class="col-12 col-md-4 mb-5 mb-md-0">
+                <h3 class="mb-3" style="font-family: 'Bebas Neue', sans-serif; color: goldenrod; font-size: 35px;">Ubicación</h3>
+                
+                <!-- Este div con clase 'ratio' es el secreto de Bootstrap para que los iframes no rompan la pantalla en celulares -->
+                <div class="ratio ratio-4x3">
+                    <iframe class="rounded border border-warning" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d20012.34782344554!2d-88.10315258571073!3d13.641565840283143!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f65294d9b8dd31f%3A0x8f52cc58f48c3f8b!2sSan%20Carlos!5e1!3m2!1ses-419!2ssv!4v1788200955726!5m2!1ses-419!2ssv" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+
+            <!-- Columna 2: Contacto Directo -->
+            <div class="col-12 col-md-4 mb-5 mb-md-0" style="font-family: 'Montserrat', sans-serif;">
+                <h3 class="mb-4" style="font-family: 'Bebas Neue', sans-serif; color: goldenrod; font-size: 35px;">Contacto</h3>
+                <p class="mb-1" style="font-weight: 600;">Joya Garage S.A.S.</p>
+                <p class="mb-1 text-white-50">Final 2av. Sur #37</p>
+                <p class="mb-1 text-white-50">San Carlos, Morazán</p>
+                <p class="mb-1 mt-3 text-warning">Tel: +503 6845-0504</p>
+                <p class="mb-0 text-white-50">joyagarage@gmail.com</p>
+            </div>
+
+            <!-- Columna 3: Redes Sociales -->
+            <div class="col-12 col-md-4">
+                <h3 class="mb-4" style="font-family: 'Bebas Neue', sans-serif; color: goldenrod; font-size: 35px;">Redes Sociales</h3>
+                <!-- Botones apilados con un ancho del 50% para que se vean elegantes -->
+                <div class="d-flex flex-column align-items-center gap-3" style="font-family: 'Montserrat', sans-serif; font-weight: 600;">
+                    <a href="https://www.instagram.com/joya.garage/" class="btn btn-outline-warning w-50">Instagram</a>
+                    <a href="https://www.facebook.com/profile.php?id=61588965927020" class="btn btn-outline-warning w-50">Facebook</a>
+                    <a href="https://wa.me/50368450504" target="_blank" class="btn btn-outline-warning w-50">WhatsApp</a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Línea divisoria y Copyright al fondo -->
+        <hr class="border-warning opacity-25 mt-5 mb-3">
+        <p class="small text-white-50 m-0" style="font-family: 'Montserrat', sans-serif;">
+            &copy; 2026 Joya Garage S.A.S. - Todos los derechos reservados.
+        </p>
+    </div>
+</footer>
+
+<style>
+    #footer {
+        scroll-snap-align: start;
+        z-index: 10;
+    }
+</style>
