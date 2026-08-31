@@ -1,9 +1,10 @@
 ---
 ---
-    <h2 id="nuestro-equipo" class="text-center text-warning mb-5">NUESTRO EQUIPO</h2>
+<section class="team-section">
+    <h1 id="nuestro-equipo" class="text-center mb-5">NUESTRO EQUIPO</h1>
     <div class="container">
         <div class="row row-cols-1 row-cols-md-3 row-cols-xl-5 g-4">
-            <div class="col  ">
+            <div class="col">
                 <div class="card h-100">
                     <img src="/ejemplo.jpg" class="card-img-top" alt="FOTO DE DANIEL JOSUE JOYA MAJANO">
                     <div class="card-body bg-dark text-white border border-warning">
@@ -22,7 +23,7 @@
                 </div>
             </div>
             <div class="col">
-                <div class="card h-100" >
+                <div class="card h-100">
                     <img src="/ejemplo.jpg" class="card-img-top" alt="FOTO DE GERSON MANASES FLORES QUINTEROS">
                     <div class="card-body bg-dark text-white border border-warning">
                         <h5 class="card-title text-warning">GERSON FLORES </h5>
@@ -30,41 +31,41 @@
                     </div>
                 </div>
             </div>
-                <div class="col">
-                    <div class="card h-100">
-                        <img src="/ejemplo.jpg" class="card-img-top" alt="FOTO DE DIEGO ANTHONIO CABRERA GUEVARA">
-                        <div class="card-body bg-dark text-white border border-warning">
-                            <h5 class="card-title text-warning">DIEGO CABRERA </h5>
-                            <p class="card-text">Aporte de $2,000 USD</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card h-100" >
-                        <img src="/ejemplo.jpg" class="card-img-top" alt="FOTO DE GERSON EZEQUIEL PINEDA ARGUETA">
-                        <div class="card-body bg-dark text-white border border-warning">
-                            <h5 class="card-title text-warning">GERSON PINEDA </h5>
-                            <p class="card-text">Aporte de $2,000 USD</p>
-                        </div>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="/ejemplo.jpg" class="card-img-top" alt="FOTO DE DIEGO ANTHONIO CABRERA GUEVARA">
+                    <div class="card-body bg-dark text-white border border-warning">
+                        <h5 class="card-title text-warning">DIEGO CABRERA </h5>
+                        <p class="card-text">Aporte de $2,000 USD</p>
                     </div>
                 </div>
             </div>
-        </div>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="/ejemplo.jpg" class="card-img-top" alt="FOTO DE GERSON EZEQUIEL PINEDA ARGUETA">
+                    <div class="card-body bg-dark text-white border border-warning">
+                        <h5 class="card-title text-warning">GERSON PINEDA </h5>
+                        <p class="card-text">Aporte de $2,000 USD</p>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- Aquí se cerraba un div extra antes que rompía el HTML -->
     </div>
+</section>
 
 <style>
-    h2 {
-        color: goldenrod;
-    }
     .card-title {
         font-family: "Bebas Neue", sans-serif;
-        font-weight: 400;
-        font-style: normal;
     }
     .card-text {
         font-family: "Montserrat", sans-serif;
+    }
+    #nuestro-equipo {
+        font-size: 50px;
+        font-family: "Bebas Neue", sans-serif;
         font-weight: 400;
         font-style: normal;
+        color: goldenrod;
+        margin-top: 50px;
     }
-
 </style>
