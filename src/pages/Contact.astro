@@ -1,0 +1,88 @@
+---
+---
+<section id="contacto" class="oculto vh-100 d-flex flex-column justify-content-center align-items-center bg-dark position-relative">
+    
+    <h2 class="text-center mb-4" style="font-size: 50px; font-family: 'Bebas Neue', sans-serif; color: goldenrod;">COTIZA TU VEHÍCULO</h2>
+    
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-8 col-lg-6">
+                
+                <form id="form-cotizacion">
+                    
+                    <div class="form-floating mb-3 text-dark">
+                        <input type="text" class="form-control" id="floatingName" placeholder="Juan Perez">
+                        <label for="floatingName">Nombre Completo</label>
+                    </div>
+
+                    <div class="form-floating mb-3 text-dark">
+                        <input type="email" class="form-control" id="floatingEmail" placeholder="name@example.com">
+                        <label for="floatingEmail">Correo Electrónico</label>
+                    </div>
+
+                    <div class="form-floating mb-3 text-dark">
+                        <select class="form-select" id="floatingSelect" aria-label="Tipo de trámite">
+                            <option selected>Selecciona un servicio</option>
+                            <option value="1">Importación "Llave en Mano"</option>
+                            <option value="2">Trámites Sertracen</option>
+                        </select>
+                        <label for="floatingSelect">¿En qué podemos ayudarte?</label>
+                    </div>
+
+                    <div class="form-floating mb-4 text-dark">
+                        <textarea class="form-control" placeholder="Detalla el modelo, año y presupuesto" id="floatingTextarea" style="height: 120px"></textarea>
+                        <label for="floatingTextarea">Detalles de tu vehículo ideal / Presupuesto / Servicio Requerido</label>
+                    </div>
+
+                    <div class="d-grid">
+                        <!-- Botón que hace juego con tu Navbar y Hero -->
+                        <button type="submit" class="btn btn-outline-warning btn-lg" style="font-family: 'Montserrat', sans-serif; font-weight: 600;">Enviar Cotización</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    #contacto{
+        scroll-snap-align: start;
+         z-index: 1;
+    }
+</style>
+
+<script>
+    const formulario = document.getElementById('form-cotizacion');
+
+    // El "if" de seguridad: Solo ejecuta el código si encontró el formulario
+    if (formulario) {
+        formulario.addEventListener('submit', function(evento) {
+            evento.preventDefault();
+
+            // Usamos aserciones de tipo (as HTMLInputElement) para calmar al inspector de TypeScript
+            const inputNombre = document.getElementById('floatingName') as HTMLInputElement;
+            const inputCorreo = document.getElementById('floatingEmail') as HTMLInputElement;
+            const selectElement = document.getElementById('floatingSelect') as HTMLSelectElement;
+            const inputDetalles = document.getElementById('floatingTextarea') as HTMLTextAreaElement;
+
+            // Extraemos los valores de forma segura
+            const nombre = inputNombre ? inputNombre.value : 'Cliente';
+            const correo = inputCorreo ? inputCorreo.value : 'No proporcionado';
+            const servicio = selectElement ? selectElement.options[selectElement.selectedIndex].text : 'No especificado';
+            const detalles = inputDetalles ? inputDetalles.value : 'Sin detalles';
+
+            const telefono = "50368450504"; 
+
+            const mensaje = `¡Hola Joya Garage! %0A%0A` +
+                            `Mi nombre es *${nombre}* y me interesa una cotización.%0A%0A` +
+                            `*Servicio de interés:* ${servicio}%0A` +
+                            `*Detalles del vehículo:* ${detalles}%0A` +
+                            `*Mi correo de contacto:* ${correo}`;
+
+            const urlWhatsApp = `https://wa.me/${telefono}?text=${mensaje}`;
+            window.open(urlWhatsApp, '_blank');
+            (formulario as HTMLFormElement).reset();
+        });
+    }
+</script>
