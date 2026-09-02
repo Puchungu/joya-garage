@@ -1,6 +1,8 @@
+<---
+---
 <section id="contacto" class="oculto vh-100 d-flex flex-column justify-content-center align-items-center bg-dark position-relative pt-5">
     
-    <h2 class="text-center mb-4 mt-4 pt-5" style="font-size: 50px; font-family: 'Bebas Neue', sans-serif; color: goldenrod;">COTIZA TU VEHÍCULO</h2>
+    <h2 class="text-center mb-2 pt-5" style="font-size: 50px; font-family: 'Bebas Neue', sans-serif; color: goldenrod;">COTIZA TU VEHÍCULO</h2>
     
     <div class="container">
         <div class="row justify-content-center">
@@ -33,6 +35,7 @@
                     </div>
 
                     <div class="d-grid">
+                        <!-- Botón que hace juego con tu Navbar y Hero -->
                         <button type="submit" class="btn btn-outline-warning btn-lg" style="font-family: 'Montserrat', sans-serif; font-weight: 600;">Enviar Cotización</button>
                     </div>
                 </form>
@@ -43,9 +46,43 @@
 </section>
 
 <style>
-    #contacto {
+    #contacto{
         scroll-snap-align: start;
-        z-index: 1;
-        box-sizing: border-box;
+         z-index: 1;
     }
 </style>
+
+<script>
+    const formulario = document.getElementById('form-cotizacion');
+
+    // El "if" de seguridad: Solo ejecuta el código si encontró el formulario
+    if (formulario) {
+        formulario.addEventListener('submit', function(evento) {
+            evento.preventDefault();
+
+            // Usamos aserciones de tipo (as HTMLInputElement) para calmar al inspector de TypeScript
+            const inputNombre = document.getElementById('floatingName') as HTMLInputElement;
+            const inputCorreo = document.getElementById('floatingEmail') as HTMLInputElement;
+            const selectElement = document.getElementById('floatingSelect') as HTMLSelectElement;
+            const inputDetalles = document.getElementById('floatingTextarea') as HTMLTextAreaElement;
+
+            // Extraemos los valores de forma segura
+            const nombre = inputNombre ? inputNombre.value : 'Cliente';
+            const correo = inputCorreo ? inputCorreo.value : 'No proporcionado';
+            const servicio = selectElement ? selectElement.options[selectElement.selectedIndex].text : 'No especificado';
+            const detalles = inputDetalles ? inputDetalles.value : 'Sin detalles';
+
+            const telefono = "50368450504"; 
+
+            const mensaje = `¡Hola Joya Garage! %0A%0A` +
+                            `Mi nombre es *${nombre}* y me interesa una cotización.%0A%0A` +
+                            `*Servicio de interés:* ${servicio}%0A` +
+                            `*Detalles del vehículo:* ${detalles}%0A` +
+                            `*Mi correo de contacto:* ${correo}`;
+
+            const urlWhatsApp = `https://wa.me/${telefono}?text=${mensaje}`;
+            window.open(urlWhatsApp, '_blank');
+            (formulario as HTMLFormElement).reset();
+        });
+    }
+</script>
