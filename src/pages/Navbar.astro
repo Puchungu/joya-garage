@@ -1,48 +1,53 @@
-<footer id="footer" class="oculto vh-100 d-flex flex-column justify-content-center align-items-center bg-dark position-relative text-light pt-5">
-    <div class="container text-center">
-        <div class="row align-items-center">
-            
-            <!-- Columna 1: Mapa Responsivo -->
-            <div class="col-12 col-md-4 mb-4 mb-md-0">
-                <h3 class="mb-3" style="font-family: 'Bebas Neue', sans-serif; color: goldenrod; font-size: 35px;">Ubicación</h3>
-                <div class="ratio ratio-4x3">
-                    <iframe class="rounded border border-warning" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d20012.34782344554!2d-88.10315258571073!3d13.641565840283143!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f65294d9b8dd31f%3A0x8f52cc58f48c3f8b!2sSan%20Carlos!5e1!3m2!1ses-419!2ssv!4v1788200955726!5m2!1ses-419!2ssv" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+---
+---
+
+    <nav class= " navbar navbar-expand-lg navbar-dark bg-transparent sticky-top w-100" style="z-index: 1050; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);">
+            <div class="container">
+                 <a class="navbar-brand" href="" id="logo-inicio" style="cursor: pointer;">
+                    <img src="/logo no bg.png" id="logo" alt="Logo de la empresa Joya Garage">
+                 </a>
+                <div class="d-flex ms-auto">
+                        <btn class="btn btn-outline-warning" id="cotizar">Cotizar Vehiculo</btn>
                 </div>
             </div>
-
-            <!-- Columna 2: Contacto Directo -->
-            <div class="col-12 col-md-4 mb-4 mb-md-0" style="font-family: 'Montserrat', sans-serif;">
-                <h3 class="mb-3" style="font-family: 'Bebas Neue', sans-serif; color: goldenrod; font-size: 35px;">Contacto</h3>
-                <p class="mb-1" style="font-weight: 600;">Joya Garage S.A.S.</p>
-                <p class="mb-1 text-white-50">Final 2av. Sur #37</p>
-                <p class="mb-1 text-white-50">San Carlos, Morazán</p>
-                <p class="mb-1 mt-2 text-warning">Tel: +503 6845-0504</p>
-                <p class="mb-0 text-white-50">joyagarage@gmail.com</p>
-            </div>
-
-            <!-- Columna 3: Redes Sociales -->
-            <div class="col-12 col-md-4">
-                <h3 class="mb-3" style="font-family: 'Bebas Neue', sans-serif; color: goldenrod; font-size: 35px;">Redes Sociales</h3>
-                <div class="d-flex flex-column align-items-center gap-2" style="font-family: 'Montserrat', sans-serif; font-weight: 600;">
-                    <a href="https://www.instagram.com/joya.garage/" class="btn btn-outline-warning w-50">Instagram</a>
-                    <a href="https://www.facebook.com/profile.php?id=61588965927020" class="btn btn-outline-warning w-50">Facebook</a>
-                    <a href="https://wa.me/50368450504" target="_blank" class="btn btn-outline-warning w-50">WhatsApp</a>
-                </div>
-            </div>
-
-        </div>
-
-        <hr class="border-warning opacity-25 mt-4 mb-3">
-        <p class="small text-white-50 m-0" style="font-family: 'Montserrat', sans-serif;">
-            &copy; 2026 Joya Garage S.A.S. - Todos los derechos reservados.
-        </p>
-    </div>
-</footer>
+    </nav>
 
 <style>
-    #footer {
-        scroll-snap-align: start;
-        z-index: 10;
-        box-sizing: border-box;
+    #logo{
+        width: 150px;
+        height: 200px;
+    }
+    .btn{
+        font-family: "Montserrat", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 600;
+        font-style: normal;
     }
 </style>
+
+<script>
+    const logo = document.getElementById('logo-inicio');
+    
+    if (logo) {
+        logo.addEventListener('click', (e) => {
+            e.preventDefault(); // Evita que ponga el "#" en la URL
+            
+            document.querySelector('.snap-container')?.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
+
+    const cotizarBtn = document.getElementById('cotizar');
+    if (cotizarBtn) {
+        cotizarBtn.addEventListener('click', (e) => {
+            e.preventDefault(); // Evita que ponga el "#" en la URL
+            
+            const contactoSection = document.getElementById('contacto');
+            if (contactoSection) {
+                contactoSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    }
+</script>
